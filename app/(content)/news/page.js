@@ -1,13 +1,9 @@
 import NewsList from '@/components/NewsList';
+import { getAllNews } from '@/lib/news';
 import React from 'react';
 
 const page = async () => {
-  const response = await fetch('http://localhost:8080/news');
-  if (!response.ok) {
-    throw new Error('Failed to fetch news.');
-  }
-  const news = await response.json();
-
+  const news = getAllNews();
   return (
     <>
       <h1>News Page</h1>
@@ -17,6 +13,27 @@ const page = async () => {
 };
 
 export default page;
+
+// Fetching data in server component
+// import NewsList from '@/components/NewsList';
+// import React from 'react';
+
+// const page = async () => {
+//   const response = await fetch('http://localhost:8080/news');
+//   if (!response.ok) {
+//     throw new Error('Failed to fetch news.');
+//   }
+//   const news = await response.json();
+
+//   return (
+//     <>
+//       <h1>News Page</h1>
+//       <NewsList news={news} />;{' '}
+//     </>
+//   );
+// };
+
+// export default page;
 
 // client side FETCHING Data
 // 'use client';
