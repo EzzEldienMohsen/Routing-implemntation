@@ -4,7 +4,7 @@ import React from 'react';
 const NewsList = ({ news }) => {
   return (
     <ul className="news-list">
-      {news.map((item) => {
+      {news?.map((item) => {
         return (
           <li key={item.id}>
             <Link href={`/news/${item.slug}`}>
