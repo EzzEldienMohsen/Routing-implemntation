@@ -64,7 +64,7 @@ const page = async ({ params }) => {
 
   return (
     <>
-      <React.Suspense fallback={<p>Loading header...</p>}>
+      <React.Suspense fallback={<p>Loading filter...</p>}>
         <FilteredHeader year={selectedYear} month={selectedMonth} />
       </React.Suspense>
       <React.Suspense fallback={<p>Loading news...</p>}>
