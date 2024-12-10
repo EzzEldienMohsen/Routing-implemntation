@@ -1,11 +1,11 @@
 import Modal from '@/components/Modal';
-import { DUMMY_NEWS } from '@/dummyNews';
+import { getNewsItem } from '@/lib/news';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
-const page = ({ params }) => {
+const page = async ({ params }) => {
   const { id: slug } = params;
-  const newsItem = DUMMY_NEWS.find((item) => item.slug === slug);
+  const newsItem = await getNewsItem(slug);
   if (!newsItem) {
     notFound();
   }

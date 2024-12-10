@@ -3,7 +3,7 @@ import { getAllNews } from '@/lib/news';
 import React from 'react';
 
 const page = async () => {
-  const news = getAllNews();
+  const news = await getAllNews();
   return (
     <>
       <h1>News Page</h1>
